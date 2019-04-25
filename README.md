@@ -7,9 +7,12 @@ Personal dotfiles and a script for simplify new install.
 
 Clone this repository in your home directory
 
+```console
 $ cd ~
 $ git clone https://github.com/seb-d/dotfiles.git
 $ source /path/to/.dotfiles/install.sh
+```
+
 
 
 ## Manual config
