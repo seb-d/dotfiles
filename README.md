@@ -14,6 +14,12 @@ $ source /path/to/.dotfiles/install.sh
 ```
 
 
+## Automatic config
+
+- Essential packages install (require root)
+- Terminal configuration
+- Emacs configuration
+- Git configuration
 
 ## Manual config
 
