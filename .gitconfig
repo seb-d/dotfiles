@@ -1,0 +1,32 @@
+[user]
+        email = sebastien.delecraz@gmail.com
+        name = Sebastien Delecraz
+
+[core]
+        editor = emacs
+        excludesfile = ~/.gitignore_global
+
+[color]
+        ui = true
+
+[color "branch"]
+       current = yellow reverse
+       local = yellow
+       remote = green
+
+[color "diff"]
+       whitespace = red reverse
+
+[color "status"]
+       added = yellow
+       changed = green
+       untracked = cyan
+
+[alias]
+        st = status
+        co = checkout
+        br = branch       
+        sl = shortlog
+        hist = log --pretty='%C(yellow)%h %C(green)%ad %Creset%s %C(cyan)[%an]' --graph --date=short  
+[push]
+	default = simple
