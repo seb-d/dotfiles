@@ -18,7 +18,7 @@ $ source /path/to/.dotfiles/install.sh
 
 - Essential packages install (require root)
 - Terminal configuration
-- Emacs configuration
+- Emacs/Spacemacs configuration
 - Git configuration
 
 ## Manual config
