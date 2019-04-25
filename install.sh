@@ -8,9 +8,8 @@ cd $DOT_FOLDER
 
 packages_install() {
     echo "Packages install:"
-    sudo apt install zsh tmux emacs htop curl git chrome-gnome-shell xclip\
+    sudo apt install zsh tmux emacs htop curl git chrome-gnome-shell xclip mosh\
          aspell-fr aspell-en ttf-mscorefonts-installer gnome-tweaks texlive-full
-
     echo "Packages install done!"
     echo ""
 }
