@@ -2,8 +2,8 @@
 
 Personal dotfiles and a script for simplify new install.
 
-## Installation
 
+## Installation
 
 Clone this repository in your home directory
 
@@ -21,8 +21,10 @@ $ source /path/to/.dotfiles/install.sh
 - Emacs/Spacemacs configuration
 - Git configuration
 
+
 ## Manual config
 
-
 - Set terminal color to solarized dark (text, background and palette)
+- Install Alternatetab and Workspace matrix gnome-shell-extension
+- Remove gnome-shell-extension-ubuntu-dock
 

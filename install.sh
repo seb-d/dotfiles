@@ -98,11 +98,11 @@ terminal_config() {
 
     echo "Create dotfiles backup"
 
-    backup_dotfiles .tmux.conf .zshrc
+    backup_dotfiles .tmux.conf .zshrc .dircolors
 
     echo "Create simlinks"
 
-    create_links .tmux.conf .zshrc
+    create_links .tmux.conf .zshrc .dircolors
 
     echo ""
     echo "Terminal config done!"
@@ -159,14 +159,6 @@ then
     git_config
 fi
 
-read -r -p "Do you want configure dicolors? [y/N] " response
-response=${response,,}    # tolower
-if [[ "$response" =~ ^(yes|y)$ ]]
-then
-    cd $HOME
-    backup_dotfiles .dircolors
-    create_links .dircolors
-fi
 
 
 
