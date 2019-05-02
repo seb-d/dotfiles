@@ -76,17 +76,14 @@ terminal_config() {
     if [ ! -d .oh-my-zsh ]
     then
         sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+        git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting 
     fi
 
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-
-
-    # Download and install powerlevel9k
-    echo "Powerlevel9k install"
+    # Download and install powerlevel10k
+    echo "Powerlevel10k install"
     if [ ! -d ~/.oh-my-zsh/custom/themes/powerlevel9k ]
-       then
-           git clone https://github.com/bhilburn/powerlevel9k.git \
-               ~/.oh-my-zsh/custom/themes/powerlevel9k
+    then
+        git clone https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k
     fi
 
     read -r -p "Do you want install Nerd Fonts? [y/N] " response
