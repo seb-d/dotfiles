@@ -76,12 +76,13 @@ terminal_config() {
     if [ ! -d .oh-my-zsh ]
     then
         sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-        git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting 
+        git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
+            ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
     fi
 
     # Download and install powerlevel10k
     echo "Powerlevel10k install"
-    if [ ! -d ~/.oh-my-zsh/custom/themes/powerlevel9k ]
+    if [ ! -d ~/.oh-my-zsh/custom/themes/powerlevel10k ]
     then
         git clone https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k
     fi
@@ -95,11 +96,15 @@ terminal_config() {
 
     echo "Create dotfiles backup"
 
-    backup_dotfiles .tmux.conf .zshrc .dircolors
+    backup_dotfiles .tmux.conf .zshrc .dircolors .zprofile
 
     echo "Create simlinks"
 
     create_links .tmux.conf .zshrc .dircolors
+
+    echo "Set DEFAUL_USER for zsh"
+
+    echo DEFAULT_USER=\"$USER\" > ~/.zprofile
 
     echo ""
     echo "Terminal config done!"
@@ -111,12 +116,12 @@ terminal_config() {
 
 spacemacs_install() {
     cd $HOME
-    # echo
-    # if [ -d .emacs.d]
-    # then
-    #     rm -rf .emacs.d
-    # fi
-    # git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+    echo
+    if [ -d .emacs.d]
+    then
+        rm -rf .emacs.d
+    fi
+    git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
     backup_dotfiles .spacemacs
     create_links .spacemacs
 }
