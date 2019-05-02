@@ -116,12 +116,16 @@ terminal_config() {
 
 spacemacs_install() {
     cd $HOME
-    echo
-    if [ -d .emacs.d]
+    read -r -p "Do you want install spacemacs (.emacs.d will be delete)? [y/N] " response
+    response=${response,,}    # tolower
+    if [[ "$response" =~ ^(yes|y)$ ]]
     then
-        rm -rf .emacs.d
+        if [ -d .emacs.d]
+        then
+            rm -rf .emacs.d
+        fi
+        git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
     fi
-    git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
     backup_dotfiles .spacemacs
     create_links .spacemacs
 }
@@ -140,14 +144,14 @@ then
     packages_install
 fi
 
-read -r -p "Do you want config terminal? [y/N] " response
+read -r -p "Do you want configure terminal? [y/N] " response
 response=${response,,}    # tolower
 if [[ "$response" =~ ^(yes|y)$ ]]
 then
     terminal_config
 fi
 
-read -r -p "Do you want install spacemacs? [y/N] " response
+read -r -p "Do you want configure spacemacs? [y/N] " response
 response=${response,,}    # tolower
 if [[ "$response" =~ ^(yes|y)$ ]]
 then
