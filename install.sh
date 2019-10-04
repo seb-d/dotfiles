@@ -29,7 +29,7 @@ nerd_font_install() {
            then
                wget https://github.com/ryanoasis/nerd-fonts/archive/v2.0.0.zip
         fi
-        unzip nerd-fonts-2.0.0.zip
+        unzip v2.0.0.zip
     fi
     cd nerd-fonts-2.0.0
     ./install.sh
@@ -120,7 +120,7 @@ spacemacs_install() {
     response=${response,,}    # tolower
     if [[ "$response" =~ ^(yes|y)$ ]]
     then
-        if [ -d .emacs.d]
+        if [ -d .emacs.d ]
         then
             rm -rf .emacs.d
         fi
